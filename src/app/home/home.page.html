@@ -1,20 +1,31 @@
-<ion-header [translucent]="true">
+
+<ion-header [translucent]="false">
   <ion-toolbar>
     <ion-title>
-      Blank
+
     </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="logout()" color="danger" fill="outline">
+        Salir
+        <ion-icon slot="end" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment value="usuarios" (ionChange)="segmentChanged($event)">
+      <ion-segment-button  value="usuarios">
+        <ion-icon name="home"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="geolocasition">
+        <ion-icon name="briefcase-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="e404">
+        <ion-icon name="briefcase-outline"></ion-icon>
+      </ion-segment-button>
+    
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+<ion-content>
